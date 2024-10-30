@@ -34,7 +34,7 @@ export default function Discover({ onModalOpen }) {
       </div>
       <div className={css.artCard}>
         <img
-          src="/public/img/superhero.jpg"
+          src="/img/superhero.jpg"
           alt="Superhero Flight"
           className={css.artImage}
         />
