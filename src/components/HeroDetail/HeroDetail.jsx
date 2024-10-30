@@ -41,11 +41,13 @@ export const HeroDetail = () => {
     <div className={css.profileContainer}>
       <div className={css.backgroundImage}></div>
       <div className={css.profileContent}>
-        <img
-          src={superhero.Images[0]}
-          alt={superhero.nickname}
-          className={css.avatar}
-        />
+        <div className={css.avatarContainer}>
+          <img
+            src={superhero.Images[0]}
+            alt={superhero.nickname}
+            className={css.avatar}
+          />
+        </div>
         <div className={css.contentBox}>
           <div className={css.contentBoxText}>
             <h1 className={css.username}>{superhero.nickname}</h1>
