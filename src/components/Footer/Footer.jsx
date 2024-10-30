@@ -1,8 +1,20 @@
 import { Link } from "react-router-dom";
 import css from "./Footer.module.css";
 import { FaGithub, FaLinkedin, FaTelegramPlane } from "react-icons/fa";
+import toast from "react-hot-toast";
+import { useState } from "react";
 
 export default function Footer() {
+  const [email, setEmail] = useState("");
+
+  const submitBtn = (e) => {
+    e.preventDefault();
+    toast("Thank you, we will contact you!", {
+      icon: "👏",
+    });
+    setEmail("");
+  };
+
   return (
     <footer className={css.footer}>
       <div className={css.footerContainer}>
@@ -47,8 +59,14 @@ export default function Footer() {
           <p className={css.footerDescription}>
             Get exclusive promotions & updates straight to your inbox.
           </p>
-          <form className={css.footerForm}>
-            <input type="email" placeholder="Enter your email here" />
+          <form className={css.footerForm} onSubmit={submitBtn}>
+            <input
+              required
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              type="email"
+              placeholder="Enter your email here"
+            />
             <button type="submit">Subscribe</button>
           </form>
         </div>

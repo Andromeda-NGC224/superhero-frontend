@@ -1,6 +1,10 @@
 import css from "./Discover.module.css";
 
-export default function Discover() {
+export default function Discover({ onModalOpen }) {
+  const handleModalOpen = () => {
+    onModalOpen();
+  };
+
   return (
     <div className={css.container}>
       <div className={css.text}>
@@ -9,6 +13,10 @@ export default function Discover() {
           Discover a Universe of Heroes & Villains. Unite, Train, and Battle
           with Your Favorite Superheroes From Across Dimensions.
         </p>
+        <button className={css.button} onClick={handleModalOpen}>
+          {" "}
+          Add a new Hero
+        </button>
         <div className={css.stats}>
           <div className={css.statItem}>
             <span className={css.statValue}>1M+</span>

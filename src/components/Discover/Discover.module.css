@@ -1,6 +1,6 @@
 .container {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   gap: 60px;
   margin: 80px auto;
   text-align: center;
@@ -17,7 +17,7 @@
 .text {
   display: flex;
   flex-direction: column;
-  max-width: 500px;
+  width: 500px;
 }
 
 .description {
@@ -65,7 +65,7 @@
 }
 
 .artImage {
-  min-width: 450px;
+  width: 450px;
   height: 400px;
   object-fit: cover;
   border-radius: 20px 20px 0 0;
@@ -87,4 +87,65 @@
   display: flex;
   gap: 8px;
   font-size: 16px;
+}
+.button {
+  cursor: pointer;
+  border: none;
+  max-width: 220px;
+  padding: 16px 40px;
+  background-color: #a259ff;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  transition: background-color 0.35s ease;
+}
+.button:hover,
+.button:focus {
+  background-color: #b882ff;
+}
+@media screen and (max-width: 1280px) {
+  .container {
+    justify-content: center;
+  }
+  .artImage {
+    width: 330px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 20px 20px 0 0;
+  }
+  .text {
+    width: 330px;
+  }
+  .title {
+    font-size: 38px;
+  }
+  .description {
+    font-size: 16px;
+  }
+  .statValue {
+    font-size: 22px;
+  }
+  .statLabel {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .container {
+    margin: auto;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 40px;
+    text-align: center;
+  }
+  .title {
+    font-size: 28px;
+  }
+  .text {
+    width: 300px;
+  }
+  .button {
+    width: 100%;
+  }
 }

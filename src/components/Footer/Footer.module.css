@@ -112,3 +112,32 @@
   font-size: 12px;
   padding: 20px 115px 30px 115px;
 }
+
+@media screen and (max-width: 1280px) {
+  .footerContainer {
+    padding: 30px 80px 0 80px;
+  }
+}
+@media screen and (max-width: 901px) {
+  .footerContainer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    padding-bottom: 30px;
+  }
+}
+@media screen and (max-width: 425px) {
+  .footerContainer {
+    padding: 40px 30px;
+  }
+  .footerForm input {
+    width: 140px;
+  }
+  .footerForm button {
+    padding: 10px 15px;
+  }
+  .footerCopyright {
+    padding: 20px 15px 30px 15px;
+    text-align: center;
+  }
+}

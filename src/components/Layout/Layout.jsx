@@ -1,3 +1,4 @@
+import { Toaster } from "react-hot-toast";
 import Footer from "../Footer/Footer.jsx";
 import Header from "../Header/Header.jsx";
 import Loader from "../Loader/Loader.jsx";
@@ -8,6 +9,7 @@ export default function Layout({ children }) {
     <Suspense fallback={<Loader />}>
       <Header />
       {children}
+      <Toaster position="top-center" reverseOrder={false} />
       <Footer />
     </Suspense>
   );

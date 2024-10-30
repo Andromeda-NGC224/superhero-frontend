@@ -8,13 +8,13 @@
 .notFoundPageTitle {
   font-size: 24px;
   font-weight: 700;
-  color: #000;
+  color: #ffffff;
   margin-bottom: 15px;
 }
 .notFoundPageLink {
   font-size: 16px;
   font-weight: 500;
-  color: #000;
+  color: #ffffff;
   transition: color 0.3s ease-in-out;
 }
 

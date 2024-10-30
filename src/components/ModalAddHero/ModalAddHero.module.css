@@ -1,0 +1,173 @@
+.modalContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(46, 47, 66, 0.4);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modalContainerWindow {
+  position: absolute;
+  width: 500px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  border-radius: 15px;
+  background-color: #2b2b2b;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 72px 16px 16px 24px;
+}
+
+.modalCloseButton {
+  position: absolute;
+  top: 12px;
+  right: 24px;
+  background: none;
+  border: none;
+  font-size: 32px;
+  cursor: pointer;
+  color: #a259ff;
+  transition: color 350ms ease-in-out;
+}
+.modalCloseButton:hover,
+.modalCloseButton:focus {
+  color: #b882ff;
+}
+
+.modalText {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  margin-bottom: 16px;
+}
+.modalForm {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.modalFormContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.modalFormLabel {
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: #cccccc;
+  display: block;
+}
+
+.modalFormInput {
+  color: #ffffff;
+  width: 100%;
+  height: 40px;
+  border-radius: 13px;
+  border: 1px solid rgba(145, 145, 145, 0.4);
+  padding-top: 8px;
+  padding-left: 38px;
+  padding-bottom: 8px;
+  background-color: transparent;
+  outline: transparent;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  box-sizing: border-box;
+}
+.modalFormInput:focus {
+  border-color: #b882ff;
+}
+
+.modalFormLabelPhoto {
+  font-size: 14px;
+  color: #ffffff;
+  width: 100%;
+  height: 40px;
+  border-radius: 13px;
+  border: 1px solid rgba(145, 145, 145, 0.4);
+  padding-top: 8px;
+  padding-left: 38px;
+  padding-bottom: 8px;
+  background-color: transparent;
+  outline: transparent;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  box-sizing: border-box;
+}
+.modalFormInputPhoto {
+  display: none;
+}
+
+.modalFormIcon {
+  position: absolute;
+  stroke: #ffffff;
+  fill: #ffffff;
+  left: 12px;
+  top: 67%;
+  transform: translateY(-50%);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modalFormInput:focus + .modalFormIcon {
+  fill: #b882ff;
+  stroke: #b882ff;
+}
+
+.modalFormTextarea {
+  color: #ffffff;
+  font-family: "poppins", sans-serif;
+  width: 100%;
+  height: 120px;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  border: 1px solid rgba(145, 145, 145, 0.4);
+  border-radius: 13px;
+  background-color: transparent;
+  padding: 12px 16px;
+  outline: transparent;
+  resize: none;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  box-sizing: border-box;
+}
+.modalFormTextarea:focus {
+  border-color: #b882ff;
+}
+
+.modalFormButton {
+  margin-top: 10px;
+  margin-bottom: 8px;
+  display: block;
+  min-width: 117px;
+  max-width: 160px;
+  height: 45px;
+  color: #ffffff;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  background-color: #a259ff;
+  border-radius: 50px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+  border: none;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modalFormButton:hover,
+.modalFormButton:focus {
+  background-color: #b882ff;
+}
+
+@media screen and (max-width: 768px) {
+  .modalContainerWindow {
+    width: 80%;
+  }
+}

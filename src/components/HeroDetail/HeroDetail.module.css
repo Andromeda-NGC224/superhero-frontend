@@ -1,0 +1,101 @@
+.profileContainer {
+  position: relative;
+  margin: 0 auto;
+  background-color: #2b2b2b;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+  color: white;
+}
+.contentBox {
+  display: flex;
+}
+.contentBoxText {
+  width: 620px;
+}
+
+.backgroundImage {
+  height: 350px;
+  background-image: url("../../../public/img/oneSuperHeroPage.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.profileContent {
+  padding: 0 115px 40px 115px;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 20px;
+  margin-top: -50px;
+  border: 2px solid #1b1b1b;
+  object-fit: cover;
+}
+
+.username {
+  font-size: 52px;
+  font-weight: 500;
+  margin-top: 30px;
+  text-align: left;
+}
+
+.bio {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+}
+.bioName {
+  font-family: "Space Mono", serif;
+  color: #858584;
+  text-align: left;
+  font-size: 22px;
+}
+.bioDescription {
+  font-family: poppins, sans-serif;
+  color: #ffffff;
+}
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 15px;
+  align-self: start;
+  flex-grow: 2;
+}
+
+.updateHero,
+.deleteHero {
+  padding: 15px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.updateHero {
+  background-color: #a259ff;
+  color: #ffffff;
+  transition: all 0.35s ease;
+}
+.updateHero:hover {
+  background-color: #b882ff;
+  color: white;
+}
+
+.deleteHero {
+  background-color: transparent;
+  border: 1px solid #a259ff;
+  color: #a259ff;
+  transition: all 0.35s ease;
+}
+.deleteHero:hover {
+  border: 1px solid #b882ff;
+  color: #b882ff;
+}
