@@ -1,4 +1,5 @@
 import css from "./Discover.module.css";
+import superheroImage from "../../../public/img/superman.jpg";
 
 export default function Discover({ onModalOpen }) {
   const handleModalOpen = () => {
@@ -34,7 +35,7 @@ export default function Discover({ onModalOpen }) {
       </div>
       <div className={css.artCard}>
         <img
-          src="/img/superhero.jpg"
+          src={superheroImage}
           alt="Superhero Flight"
           className={css.artImage}
         />
