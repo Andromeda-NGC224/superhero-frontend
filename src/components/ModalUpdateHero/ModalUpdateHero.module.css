@@ -1,4 +1,5 @@
 .modalContainer {
+  z-index: 999;
   position: fixed;
   top: 0;
   left: 0;
@@ -8,19 +9,70 @@
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
     visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-
-.modalContainerWindow {
-  position: absolute;
-  width: 500px;
+.forGradient {
+  position: relative;
+  width: 540px;
+  z-index: 1;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
+}
+
+.gradientBackground::after,
+.gradientBackground::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: conic-gradient(
+    from var(--angle),
+    #ff4545,
+    #00ff99,
+    #006aff,
+    #ff0095,
+    #ff4545
+  );
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  padding: 3px;
   border-radius: 15px;
-  background-color: #2b2b2b;
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
-    0px 2px 1px rgba(0, 0, 0, 0.2);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  animation: 3s spin linear infinite;
+  z-index: -1;
+}
+
+.gradientBackground::before {
+  filter: blur(1.5rem);
+  opacity: 0.5;
+}
+
+.modalContainerWindow {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 500px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 0%) scale(1);
+  border-radius: 15px;
+  background: #2b2b2b;
   padding: 72px 16px 16px 24px;
+  z-index: 9999;
+}
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+@keyframes spin {
+  from {
+    --angle: 0deg;
+  }
+  to {
+    --angle: 360deg;
+  }
 }
 
 .modalCloseButton {
@@ -169,6 +221,30 @@
 }
 @media screen and (max-width: 768px) {
   .modalContainerWindow {
+    padding: 40px 16px 16px 24px;
+    width: 100%;
+  }
+
+  .forGradient {
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 60%;
+  }
+  .gradientBackground::after,
+  .gradientBackground::before {
+    width: 100%;
+  }
+
+  .modalFormTextarea {
+    height: 40px;
+  }
+}
+@media screen and (max-width: 374px) {
+  .forGradient {
     width: 80%;
+  }
+  .gradientBackground::after,
+  .gradientBackground::before {
+    width: 100%;
   }
 }

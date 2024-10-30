@@ -113,6 +113,9 @@
   }
 }
 @media screen and (max-width: 768px) {
+  .avatar {
+    margin-top: -80px;
+  }
   .username {
     font-size: 38px;
   }
