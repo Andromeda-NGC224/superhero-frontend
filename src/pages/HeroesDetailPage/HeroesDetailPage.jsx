@@ -1,4 +1,4 @@
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import css from "./HeroesDetailPage.module.css";
 
 import { useEffect } from "react";
@@ -17,7 +17,7 @@ export default function HeroesDetailPage() {
   }, [dispatch, id]);
 
   return (
-    <div>
+    <div className={css.heroesDetailContainer}>
       <HeroDetail />
     </div>
   );
