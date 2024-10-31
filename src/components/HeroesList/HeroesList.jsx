@@ -51,7 +51,7 @@ export default function HeroesList() {
         ))}
       </ul>
 
-      {!superheroes && (
+      {superheroes.length === 0 && (
         <div className={css.error}>
           <h2>At the moment there are no heroes yet...</h2>
         </div>
