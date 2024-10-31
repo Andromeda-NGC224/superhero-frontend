@@ -1,6 +1,6 @@
 .hero {
   padding: 250px 0 0 0;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
     url("/public/img/hero.jpg");
   background-size: cover;
   background-position: center;
