@@ -33,4 +33,4 @@ View full information about a superhero, including all images and a detailed des
 This will launch the project locally at http://localhost:5173.
 
 ## 👾 Demo:
-Check out the live demo [here](s-hero.vercel.app).
+Check out the live demo [here](https://s-hero.vercel.app/).
