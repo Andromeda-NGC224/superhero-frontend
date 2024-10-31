@@ -2,7 +2,7 @@
 **Project Description:**
 This is the frontend part of the application for managing the superhero database. The application provides an interface for creating, editing and deleting superhero profiles, as well as viewing the list and detailed information on each superhero. The site is available at the [link](https://s-hero.vercel.app/), but to start working with it, you need to wait for the backend server to start.
 
-Follow the [link](https://superhero-backend-g2ow.onrender.com) and wait until the backend server starts working, after which the inscription "Living" will appear, then it will be correct to use the site [s-hero.vercel.app](s-hero.vercel.app).
+Follow the [link](https://superhero-backend-g2ow.onrender.com) and wait until the backend server starts working, after which the inscription "Living" will appear, then it will be correct to use the site [s-hero.vercel.app](https://s-hero.vercel.app/).
 
 ## 📋 Main functions:
 - **Create a Superhero:**
