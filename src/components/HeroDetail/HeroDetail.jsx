@@ -1,33 +1,27 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { selectIsLoading, selectSuperheroes } from "../../redux/secectors.js";
 import Loader from "../Loader/Loader.jsx";
 import css from "./HeroDetail.module.css";
 import { ListOfPhotos } from "../ListOfPhotos/ListOfPhotos.jsx";
 import { useState } from "react";
 import { ModalUpdateHero } from "../ModalUpdateHero/ModalUpdateHero.jsx";
-import { deleteSuperhero } from "../../redux/operations.js";
-import { useNavigate } from "react-router-dom";
+
 import NotFoundPage from "../../pages/NotFoundPage/NotFoundPage.jsx";
+import { DeleteHeroModal } from "../DeleteHeroModal/DeleteHeroModal.jsx";
 
 export const HeroDetail = () => {
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
   const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [deleteModalIsOpen, setDeleteModalIsOpen] = useState(false);
   const data = useSelector(selectSuperheroes);
   const isLoading = useSelector(selectIsLoading);
   const superhero = data[0];
 
-  const handleModalOpen = () => {
-    setModalIsOpen(true);
+  const toggleDeleteModal = () => {
+    setDeleteModalIsOpen((prev) => !prev);
   };
 
-  const handleModalClose = () => {
-    setModalIsOpen(false);
-  };
-
-  const handleDeleteHero = async () => {
-    await dispatch(deleteSuperhero(superhero._id));
-    navigate("/superheroes");
+  const toggleModal = () => {
+    setModalIsOpen((prev) => !prev);
   };
 
   if (isLoading) {
@@ -74,10 +68,10 @@ export const HeroDetail = () => {
             </ul>
           </div>
           <div className={css.buttons}>
-            <button onClick={handleModalOpen} className={css.updateHero}>
+            <button onClick={toggleModal} className={css.updateHero}>
               Update Hero
             </button>
-            <button onClick={handleDeleteHero} className={css.deleteHero}>
+            <button onClick={toggleDeleteModal} className={css.deleteHero}>
               Delete Hero
             </button>
           </div>
@@ -85,7 +79,10 @@ export const HeroDetail = () => {
       </div>
       <ListOfPhotos allImages={superhero.Images} />
       {modalIsOpen && (
-        <ModalUpdateHero onModalClose={handleModalClose} id={superhero._id} />
+        <ModalUpdateHero onModalClose={toggleModal} id={superhero._id} />
+      )}
+      {deleteModalIsOpen && (
+        <DeleteHeroModal onModalClose={toggleDeleteModal} id={superhero._id} />
       )}
     </div>
   );

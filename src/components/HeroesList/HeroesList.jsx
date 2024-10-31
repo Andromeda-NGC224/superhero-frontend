@@ -12,7 +12,6 @@ import { Link } from "react-router-dom";
 export default function HeroesList() {
   const dispatch = useDispatch();
   const superheroes = useSelector(selectSuperheroes);
-  console.log(superheroes);
 
   const hasNextPage = useSelector(selectHasNextPage);
   const currentPage = useSelector(selectCurrentPage);

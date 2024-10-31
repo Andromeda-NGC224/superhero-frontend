@@ -57,7 +57,7 @@ const superheroesSlice = createSlice({
       })
       .addCase(createSuperhero.fulfilled, (state, action) => {
         state.isLoading = false;
-        state.superheroes.push(action.payload);
+        state.superheroes.unshift(action.payload);
       })
       .addCase(createSuperhero.rejected, (state, action) => {
         state.isLoading = false;
