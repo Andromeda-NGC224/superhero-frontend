@@ -7,6 +7,10 @@
   margin: 0 auto;
   border-radius: 20px 20px 0 0;
 }
+.error {
+  padding: 60px 0;
+  font-family: "Space Mono", serif;
+}
 
 .title {
   font-size: 38px;

@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import css from "./HeroesList.module.css";
 import {
   selectCurrentPage,
+  selectError,
   selectHasNextPage,
   selectIsLoading,
   selectSuperheroes,
@@ -12,6 +13,7 @@ import { Link } from "react-router-dom";
 export default function HeroesList() {
   const dispatch = useDispatch();
   const superheroes = useSelector(selectSuperheroes);
+  const error = useSelector(selectError);
 
   const hasNextPage = useSelector(selectHasNextPage);
   const currentPage = useSelector(selectCurrentPage);
@@ -48,6 +50,17 @@ export default function HeroesList() {
           </li>
         ))}
       </ul>
+
+      {!superheroes && (
+        <div className={css.error}>
+          <h2>At the moment there are no heroes yet...</h2>
+        </div>
+      )}
+      {error && (
+        <div className={css.error}>
+          <h2>At the moment there are no heroes yet...</h2>
+        </div>
+      )}
 
       {hasNextPage && (
         <button className={css.loadMore} onClick={loadMore}>
