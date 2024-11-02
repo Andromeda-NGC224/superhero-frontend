@@ -1,9 +1,17 @@
 import { Routes, Route } from "react-router-dom";
+import { lazy } from "react";
 import Layout from "../Layout/Layout.jsx";
-import HomePage from "../../pages/HomePage/HomePage.jsx";
-import HeroesCatalogPage from "../../pages/HeroesCatalogPage/HeroesCatalogPage.jsx";
-import NotFoundPage from "../../pages/NotFoundPage/NotFoundPage.jsx";
-import HeroesDetailPage from "../../pages/HeroesDetailPage/HeroesDetailPage.jsx";
+
+const HomePage = lazy(() => import("../../pages/HomePage/HomePage"));
+const HeroesCatalogPage = lazy(() =>
+  import("../../pages/HeroesCatalogPage/HeroesCatalogPage")
+);
+const HeroesDetailPage = lazy(() =>
+  import("../../pages/HeroesDetailPage/HeroesDetailPage")
+);
+const NotFoundPage = lazy(() =>
+  import("../../pages/NotFoundPage/NotFoundPage")
+);
 
 import "./App.css";
 
