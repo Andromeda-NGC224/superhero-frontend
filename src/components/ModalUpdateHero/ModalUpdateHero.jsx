@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import css from "./ModalUpdateHero.module.css";
 import { MdDriveFileRenameOutline, MdRecordVoiceOver } from "react-icons/md";
 import { GiPowerLightning } from "react-icons/gi";
@@ -7,7 +7,7 @@ import { FaPhotoFilm } from "react-icons/fa6";
 import { useDispatch } from "react-redux";
 import { updateSuperhero } from "../../redux/operations.js";
 
-export const ModalUpdateHero = ({ onModalClose, id }) => {
+export const ModalUpdateHero = ({ onModalClose, id, initialHeroData }) => {
   const dispatch = useDispatch();
 
   const [superhero, setSuperhero] = useState({
@@ -18,6 +18,12 @@ export const ModalUpdateHero = ({ onModalClose, id }) => {
     catch_phrase: "",
     Images: [],
   });
+
+  useEffect(() => {
+    if (initialHeroData) {
+      setSuperhero(initialHeroData);
+    }
+  }, [initialHeroData]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;

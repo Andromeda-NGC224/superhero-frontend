@@ -79,7 +79,11 @@ export const HeroDetail = () => {
       </div>
       <ListOfPhotos allImages={superhero.Images} />
       {modalIsOpen && (
-        <ModalUpdateHero onModalClose={toggleModal} id={superhero._id} />
+        <ModalUpdateHero
+          onModalClose={toggleModal}
+          id={superhero._id}
+          initialHeroData={superhero}
+        />
       )}
       {deleteModalIsOpen && (
         <DeleteHeroModal onModalClose={toggleDeleteModal} id={superhero._id} />
